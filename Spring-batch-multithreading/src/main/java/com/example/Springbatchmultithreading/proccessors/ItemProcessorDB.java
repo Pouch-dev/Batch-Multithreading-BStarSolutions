@@ -11,13 +11,6 @@ import java.util.concurrent.ThreadLocalRandom;
 @Slf4j
 public class ItemProcessorDB implements ItemProcessor<String, demoDTO> {
 
-    private static final Map<String, String> DEPT_NAME = new HashMap<>();
-
-    public ItemProcessorDB(){
-        DEPT_NAME.put("001","Technology");
-        DEPT_NAME.put("002","Operations");
-        DEPT_NAME.put("003","Accounts");
-    }
 
     @Override
     public demoDTO process (String item) throws Exception{
