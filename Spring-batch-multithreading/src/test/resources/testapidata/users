@@ -1,0 +1,24 @@
+//[
+  {
+    "id": 1,
+    "name": "User01",
+    "departments": "001",
+    "salary": "12000"
+  }
+//,{
+//    "id": 2,
+//    "name": "User02",
+//    "departments": "002",
+//    "salary": "13000"
+//  },{
+//    "id": 3,
+//    "name": "User03",
+//    "departments": "003",
+//    "salary": "10000"
+//  },{
+//    "id": 4,
+//    "name": "User04",
+//    "departments": "001",
+//    "salary": "20000"
+//  }
+//]

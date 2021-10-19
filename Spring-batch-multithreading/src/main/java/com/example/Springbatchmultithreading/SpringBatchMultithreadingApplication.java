@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
 
 @SpringBootApplication
-@Import({BatchJDBCJobConfig.class, BatchConfiguration.class})
 public class SpringBatchMultithreadingApplication {
 
 	public static void main(String[] args) {

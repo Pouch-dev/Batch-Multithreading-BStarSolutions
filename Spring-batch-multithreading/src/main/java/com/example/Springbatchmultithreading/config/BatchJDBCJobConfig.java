@@ -26,6 +26,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.task.TaskExecutor;
 
@@ -34,15 +35,16 @@ import java.util.concurrent.Future;
 @Configuration
 @EnableBatchProcessing
 public class BatchJDBCJobConfig extends BatchJobConfiguration{
+//
+//    @Autowired
+//    private JobLauncher jobLauncher;
 
-    @Autowired
-    private JobLauncher jobLauncher;
-
-    public void schedule(@Qualifier("importDBFromCSV") Job importDBFromCSV) throws JobParametersInvalidException, JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException{
-        jobLauncher.run(importDBFromCSV, new JobParametersBuilder().addLong("time", System.currentTimeMillis()).toJobParameters());
-    }
+//    public void schedule(@Qualifier("importDBFromCSV") Job importDBFromCSV) throws JobParametersInvalidException, JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException{
+//        jobLauncher.run(importDBFromCSV, new JobParametersBuilder().addLong("time", System.currentTimeMillis()).toJobParameters());
+//    }
 
     @Bean
+    @Primary
     protected Job importDBFromCSV(@Qualifier("importData")Step importData){
         return this.jobs.get("importDBFromCSV")
                 .preventRestart()

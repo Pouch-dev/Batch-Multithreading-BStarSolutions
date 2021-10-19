@@ -25,10 +25,6 @@ import java.util.concurrent.Future;
 @Configuration
 @EnableBatchProcessing
 public class BatchConfiguration extends BatchJobConfiguration{
-
-
-    @Autowired private JobLauncher launcher;
-
     @Bean public ItemReader<String> reader(){ return new ItemReaderDB();}
 
     @Bean public ItemProcessor<String, demoDTO> processor(){return new ItemProcessorDB();}
